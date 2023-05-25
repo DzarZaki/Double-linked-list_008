@@ -17,7 +17,7 @@ public:
 	DoubleLinkedList();
 	void addNode();
 	bool search(int rollNo, Node** previous, Node** current);
-	bool ddeleteNode(int rollNo);
+	bool deleteNode(int rollNo);
 	bool listEmpty();
 	void ascending();
 	void descending();
@@ -99,4 +99,17 @@ bool DoubleLinkedList::deleteNode(int rollNo) {
 }
 bool DoubleLinkedList::listEmpty() {
 	return (START == NULL);
+}
+
+void DoubleLinkedList::ascending() {
+	if (listEmpty())
+		cout << "\nList is Empty" << endl;
+	else {
+		cout << "\nRecords in ascending order of roll number are:" << endl;
+		Node* currentNode = START;
+		while (currentNode != NULL) {
+			cout << currentNode->noMhs << " " << currentNode->nama << endl;
+			currentNode = currentNode->next;
+		}
+	}
 }
