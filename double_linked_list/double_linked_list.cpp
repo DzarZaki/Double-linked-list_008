@@ -57,5 +57,10 @@ void DoubleLinkedList::addNode() {
 
 	Node* current = START; 
 	while (current->next != NULL && nim > current->next->noMhs) 
-		current = current->next; 
+		current = current->next;  
+
+	if (current->next != NULL && nim == current->next->noMhs) {
+		cout << "\nDuplicate roll numbers not allowed" << endl;
+		return;
+	}
 } 
